@@ -3,6 +3,7 @@ import { Text, View } from 'react-native'
 import styles from './styles'
 import BottomTab from '../../components/bottom-tab'
 import BasketIcon from '../../assets/basket'
+import SearchInput from '../../components/search-input'
 
 const HomeScreen = () => {
   return (
@@ -11,6 +12,7 @@ const HomeScreen = () => {
         <Text style={styles.logo}>FurnitureCo.</Text>
         <BasketIcon style={styles.basketIcon}/>
       </View>
+      <SearchInput/>
         <BottomTab/>
     </View>
   )
