@@ -19,6 +19,11 @@ const styles = StyleSheet.create({
     },
     basketIcon: {
         transform: [{ scale: 1.1 }]
+    },
+    productsList: {
+        width: '100%',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
     }
 })
 

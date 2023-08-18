@@ -5,13 +5,13 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         paddingVertical: 14,
         paddingHorizontal: 22,
-        backgroundColor: '#fff',
     },
     contentContainer:{
-        height: 100,
+        height: 120,
         paddingEnd: 22,
+        marginTop: 10,
         justifyContent: 'space-between',
-        alignItems: 'center',
+        alignItems: 'flex-start',
     },
     buttonContainer:{
         alignContent: 'center',
