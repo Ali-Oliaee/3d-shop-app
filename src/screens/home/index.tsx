@@ -4,6 +4,7 @@ import styles from './styles'
 import BottomTab from '../../components/bottom-tab'
 import BasketIcon from '../../assets/basket'
 import SearchInput from '../../components/search-input'
+import CategoriesContainer from '../../components/categories-container'
 
 const HomeScreen = () => {
   return (
@@ -13,6 +14,7 @@ const HomeScreen = () => {
         <BasketIcon style={styles.basketIcon}/>
       </View>
       <SearchInput/>
+      <CategoriesContainer/>
         <BottomTab/>
     </View>
   )
