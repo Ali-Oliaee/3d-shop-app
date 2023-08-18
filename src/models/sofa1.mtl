@@ -1,0 +1,42 @@
+# Blender 3.4.1 MTL File: 'sofa-first.blend'
+# www.blender.org
+
+newmtl metal
+Ns 654.628113
+Ka 1.000000 1.000000 1.000000
+Kd 0.047596 0.047596 0.047596
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+
+newmtl pillow_fabric
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Ks F:/MegaScan/Material/Materials_Fabric_02/4k JPEG/Fabric_Mattress_02/Fabric_Mattress_02_glossiness.jpg
+map_Ns F:/MegaScan/Material/Materials_Fabric_02/4k JPEG/Fabric_Mattress_02/Fabric_Mattress_02_roughness.jpg
+
+newmtl rug_fabric
+Ka 1.000000 1.000000 1.000000
+Ks 0.272727 0.272727 0.272727
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd textures/pcvgvmp_4K_Albedo.jpg
+map_Ns textures/pcvgvmp_4K_Roughness.jpg
+
+newmtl sofa_fabric
+Ns 250.000000
+Ka 0.222727 0.222727 0.222727
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 0.050000
+d 1.000000
+illum 3
+map_Kd textures/Fabric_Mattress_02_basecolor.jpg
