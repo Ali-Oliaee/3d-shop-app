@@ -20,19 +20,24 @@ const styles = StyleSheet.create({
     button: {
         width: 50,
         height: 50,
-        borderRadius: 18,
+        borderRadius: 14,
         backgroundColor: '#F5F5F5',
         justifyContent: 'center',
         alignItems: 'center',
-        marginEnd: 14,
+        marginEnd: 20,
     },
     selected:{
         backgroundColor:'#303030'
     },
+    icon :{
+        transform: [{ scale: 1.3 }],
+    },
     title: {
         color:'#909090',
-        paddingStart: 5,        
         marginTop: 4,
+        width: 50,
+        fontSize: 13,
+        textAlign: 'center',
     },
     selectedTitle :{
         color:'#000',

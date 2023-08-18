@@ -13,16 +13,16 @@ import BedIcon from '../../assets/bedIcon'
 
 const CategoriesContainer = () => {
   const categories = [
-    { id: 0, icon: <StarIcon/>, title: 'Popular'},
-    { id: 1, icon: <ChairIcon/>, title: 'Chairs'},
-    { id: 2, icon: <TableIcon/>, title: 'Tables'},
-    { id: 3, icon: <SofaIcon/>, title: 'Sofas'},
-    { id: 4, icon: <BedIcon/>, title: 'Beds'},
-    { id: 5, icon: <ChairIcon/>, title: 'Chairs'},
-    { id: 6, icon: <ChairIcon/>, title: 'Chairs' },
-    { id: 7, icon: <TableIcon/> , title: 'Tables'},
-    { id: 8, icon: <SofaIcon/>, title: 'Sofas' },
-    { id: 9, icon: <BedIcon/>, title: 'Beds' },
+    { id: 0, icon: <StarIcon style={styles.icon}/>, title: 'Popular'},
+    { id: 1, icon: <ChairIcon style={styles.icon}/>, title: 'Chairs'},
+    { id: 2, icon: <TableIcon style={styles.icon}/>, title: 'Tables'},
+    { id: 3, icon: <SofaIcon style={styles.icon}/>, title: 'Sofas'},
+    { id: 4, icon: <BedIcon style={styles.icon}/>, title: 'Beds'},
+    { id: 5, icon: <ChairIcon style={styles.icon}/>, title: 'Chairs'},
+    { id: 6, icon: <ChairIcon style={styles.icon}/>, title: 'Chairs' },
+    { id: 7, icon: <TableIcon style={styles.icon}/> , title: 'Tables'},
+    { id: 8, icon: <SofaIcon style={styles.icon}/>, title: 'Sofas' },
+    { id: 9, icon: <BedIcon style={styles.icon}/>, title: 'Beds' },
   ]
 
   return (
