@@ -3,12 +3,19 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        paddingVertical: 20,
+        paddingVertical: 14,
         paddingHorizontal: 22,
         backgroundColor: '#fff',
     },
     contentContainer:{
-        paddingEnd: 22
+        height: 100,
+        paddingEnd: 22,
+        justifyContent: 'space-between',
+        alignItems: 'center',
+    },
+    buttonContainer:{
+        alignContent: 'center',
+        justifyContent: 'center',
     },
     button: {
         width: 50,
@@ -21,6 +28,15 @@ const styles = StyleSheet.create({
     },
     selected:{
         backgroundColor:'#303030'
+    },
+    title: {
+        color:'#909090',
+        paddingStart: 5,        
+        marginTop: 4,
+    },
+    selectedTitle :{
+        color:'#000',
+        paddingStart:2,        
     }
 })
 
