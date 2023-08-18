@@ -1,21 +1,25 @@
 import React from 'react'
-import { Text, TouchableWithoutFeedback, View } from 'react-native'
+import { TouchableWithoutFeedback, View } from 'react-native'
 import styles from './styles'
+import ArchiveIcon from '../../assets/archiveIcon'
+import HomeIcon from '../../assets/homeIcon'
+import BellIcon from '../../assets/belIIcon'
+import UserIcon from '../../assets/userIcon'
 
 const BottomTab = () => {
   return (
     <View style={styles.container}>
         <TouchableWithoutFeedback>
-            <Text>option</Text>
+            <HomeIcon/>
         </TouchableWithoutFeedback>
         <TouchableWithoutFeedback>
-            <Text>option</Text>
+            <ArchiveIcon/>
         </TouchableWithoutFeedback>
         <TouchableWithoutFeedback>
-            <Text>option</Text>
+            <BellIcon/>
         </TouchableWithoutFeedback>
         <TouchableWithoutFeedback>
-            <Text>option</Text>
+            <UserIcon />
         </TouchableWithoutFeedback>
     </View>
   )
