@@ -7,7 +7,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingHorizontal: 40,
         paddingVertical: 20,
-        backgroundColor: 'red',
+        backgroundColor: '#fff',
+        position: 'absolute',
+        bottom: 0,
+        width: '100%'
         
     }
 })
