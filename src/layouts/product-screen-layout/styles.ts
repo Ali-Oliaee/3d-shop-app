@@ -7,6 +7,9 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         paddingHorizontal: 10
     },
+    modelContainer:{
+        flex: 1,
+    },
     backButton:{
         position: 'absolute',
         top: 40,

@@ -1,22 +1,28 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { Text, TouchableOpacity, View } from 'react-native'
 import styles from './styles'
 import { Canvas } from '@react-three/fiber'
 import ArchiveIconLarge from '../../assets/archiveIconLarge'
 import YellowStar from '../../assets/starYellow'
 import LeftArrow from '../../assets/leftArrow'
+import NikeShoeSport from '../../models/shoe1'
+import NikeShoeWalk from '../../models/shoe2'
 
-const ProductLayout = ({model, title,setCount, count,price,description,onBackPress}) => {
+const ProductLayout = ({title,setCount, count,price,description,onBackPress}) => {
   return (
     <View style={styles.container}>
         <TouchableOpacity style={styles.backButton} onPress={onBackPress}>
             <LeftArrow/>
         </TouchableOpacity>
         <View style={styles.modelContainer}>
-            <Canvas>
-                <ambientLight/>
-                {model}
-            </Canvas>
+            <Suspense fallback={null}>
+                <Canvas>
+                    <ambientLight/>
+                    <Suspense>
+                        {title.includes('Sport') ? <NikeShoeSport/> : <NikeShoeWalk/>}
+                    </Suspense>
+                </Canvas>
+            </Suspense>
         </View>
         <View>
             <Text style={styles.title}>{title}</Text>
