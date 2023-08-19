@@ -1,17 +1,19 @@
-import { useState } from 'react';
 import HomeScreen from './src/screens/home';
 import Product1Screen from './src/screens/product1';
 import Product2Screen from './src/screens/product2';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+const Stack = createNativeStackNavigator();
 
 export default function App() {
-  const [page, setPage] = useState<string>('home')
-
   return (
-    <>
-      {page === 'home' && <HomeScreen setPage={setPage}/>}
-      {page === 'product1' && <Product1Screen setPage={setPage}/>}
-      {page === 'product2' && <Product2Screen setPage={setPage}/>}
-    </>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='Home' screenOptions={{headerShown: false}}>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Product1" component={Product1Screen} />
+        <Stack.Screen name="Product2" component={Product2Screen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }

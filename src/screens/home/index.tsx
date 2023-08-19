@@ -7,7 +7,7 @@ import SearchInput from '../../components/search-input'
 import CategoriesContainer from '../../components/categories-container'
 import ProductCard from '../../components/product-card'
 
-const HomeScreen = ({setPage}) => {
+const HomeScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -34,7 +34,7 @@ const HomeScreen = ({setPage}) => {
           title="Nike Sport Edition"
           price="$50.18"
           image={require('../../assets/nikeShoe.png')}
-          onDetails={() => setPage('product1')}
+          onDetails={() => navigation.navigate('Product1')}
         />
           <ProductCard
           title="Adidas Hill"
@@ -45,7 +45,7 @@ const HomeScreen = ({setPage}) => {
           title="Walking Shoe"
           price="$30.99"
           image={require('../../assets/nikeWalk.png')}
-          onDetails={() => setPage('product2')}
+          onDetails={() => navigation.navigate('Product2')}
         />
           <ProductCard
           title="Sport Shoe"
