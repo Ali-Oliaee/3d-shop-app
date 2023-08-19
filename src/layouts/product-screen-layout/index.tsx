@@ -6,10 +6,10 @@ import ArchiveIconLarge from '../../assets/archiveIconLarge'
 import YellowStar from '../../assets/starYellow'
 import LeftArrow from '../../assets/leftArrow'
 
-const ProductLayout = ({model, title, count,price,description}) => {
+const ProductLayout = ({model, title,setCount, count,price,description,onBackPress}) => {
   return (
     <View style={styles.container}>
-        <TouchableOpacity style={styles.backButton}>
+        <TouchableOpacity style={styles.backButton} onPress={onBackPress}>
             <LeftArrow/>
         </TouchableOpacity>
         <View style={styles.modelContainer}>
@@ -22,7 +22,15 @@ const ProductLayout = ({model, title, count,price,description}) => {
             <Text style={styles.title}>{title}</Text>
             <View style={styles.row}>
                 <Text style={styles.price}>{price}</Text>
-                <Text>{count}</Text>
+                <View style={styles.counter}>
+                    <TouchableOpacity style={styles.counterButton} onPress={() => setCount(count + 1)}>
+                        <Text style={styles.counterButtonText}>+</Text>
+                    </TouchableOpacity>
+                    <Text style={styles.count}>0{count || 0}</Text>
+                    <TouchableOpacity style={styles.counterButton} onPress={() => setCount(count >= 1 && count - 1)}>
+                        <Text style={styles.counterButtonText}>-</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
             <View style={styles.rateContainer}>
                 <YellowStar/>

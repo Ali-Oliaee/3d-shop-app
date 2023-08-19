@@ -32,12 +32,35 @@ const styles = StyleSheet.create({
     },
     row:{
         flexDirection: 'row',
-        marginBottom: 10
+        marginBottom: 10,
+        justifyContent: 'space-between',
+        alignItems: 'center'
     },
     price:{
         fontSize: 18,
         fontWeight: 'bold',
         color: '#4E5A37'
+    },
+    counter:{
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'flex-end',
+    },
+    counterButton:{
+        backgroundColor: '#E0E0E0',
+        width: 26,
+        height: 26,
+        borderRadius:4,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    counterButtonText:{
+        fontSize: 18
+    },
+    count:{
+        marginHorizontal: 16,
+        fontSize: 16,
+        color: '#242424'
     },
     rateContainer: {
         flexDirection: 'row',
