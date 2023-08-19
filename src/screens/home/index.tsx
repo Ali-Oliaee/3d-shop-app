@@ -33,12 +33,12 @@ const HomeScreen = () => {
         <ProductCard
           title="Two Seater Luxury Sofa"
           price="$50.18"
-          image={require('../../assets/sofa1.png')}
+          image={require('../../assets/nikeShoe.png')}
         />
          <ProductCard
           title="Royal Palm Sofa"
           price="$30.99"
-          image={require('../../assets/chair1.png')}
+          image={require('../../assets/nikeWalk.png')}
         />
           <ProductCard
           title="Gaming chair"

@@ -6,7 +6,7 @@ import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader'
 
 
-const NikeShoe = () => {
+const NikeShoeSport = () => {
     const [normal, base] = useLoader(TextureLoader, [
       require('./textures/NormalsTS.jpeg'),
       require('./textures/Texture2.jpg'),
@@ -33,4 +33,4 @@ const NikeShoe = () => {
     )
   }
 
-  export default NikeShoe
+  export default NikeShoeSport
