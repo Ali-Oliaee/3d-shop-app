@@ -11,7 +11,7 @@ const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.logo}>FurnitureCo.</Text>
+        <Text style={styles.logo}>Shoe Store</Text>
         <BasketIcon style={styles.basketIcon}/>
       </View>
       <SearchInput/>
