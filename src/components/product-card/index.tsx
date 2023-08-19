@@ -3,13 +3,12 @@ import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native'
 import styles from './styles'
 import RightArrowIcon from '../../assets/rightArrow'
 
-const ProductCard = ({title, price, image}) => {
-
+const ProductCard = ({title, price, image, hasShadow=true}) => {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
       {image && <Image source={image} style={styles.image}/>}
-      <View style={styles.shadow}/>
+      {hasShadow && <View style={styles.shadow}/>}
       </View>
       <View style={styles.content}>
         <Text style={styles.title}>{title}</Text>

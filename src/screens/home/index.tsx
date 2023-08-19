@@ -54,11 +54,13 @@ const HomeScreen = () => {
           title="HOKA Child"
           price="$73.19"
           image={require('../../assets/shoe2.png')}
+          hasShadow={false}
         />
         <ProductCard
         title="Gucci Sandal"
         price="$33.00"
         image={require('../../assets/sandal.png')}
+        hasShadow={false}
       />
       </ScrollView>
       <BottomTab/>
