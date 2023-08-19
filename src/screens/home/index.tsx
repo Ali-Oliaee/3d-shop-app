@@ -11,7 +11,7 @@ const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.logo}>FurnitureCo.</Text>
+        <Text style={styles.logo}>Shoe Store</Text>
         <BasketIcon style={styles.basketIcon}/>
       </View>
       <SearchInput/>
@@ -31,34 +31,36 @@ const HomeScreen = () => {
       }}
       >
         <ProductCard
-          title="Two Seater Luxury Sofa"
+          title="Nike Sport Edition"
           price="$50.18"
-          image={require('../../assets/sofa1.png')}
+          image={require('../../assets/nikeShoe.png')}
+        />
+          <ProductCard
+          title="Adidas Hill"
+          price="$12.39"
+          image={require('../../assets/sport.png')}
         />
          <ProductCard
-          title="Royal Palm Sofa"
+          title="Walking Shoe"
           price="$30.99"
-          image={require('../../assets/chair1.png')}
+          image={require('../../assets/nikeWalk.png')}
         />
           <ProductCard
-          title="Gaming chair"
-          price="$12.39"
-          image={require('../../assets/chair2.png')}
-        />
-          <ProductCard
-          title="Leatherette Sofa"
+          title="Sport Shoe"
           price="$42.49"
-          image={require('../../assets/chair3.png')}
+          image={require('../../assets/blackShoe.png')}
         />
         <ProductCard
-          title="Luxury Bed"
+          title="HOKA Child"
           price="$73.19"
-          image={require('../../assets/bed1.png')}
+          image={require('../../assets/shoe2.png')}
+          hasShadow={false}
         />
         <ProductCard
-        title="Royal Palm Sofa"
+        title="Gucci Sandal"
         price="$33.00"
-        image={require('../../assets/sofa2.png')}
+        image={require('../../assets/sandal.png')}
+        hasShadow={false}
       />
       </ScrollView>
       <BottomTab/>
