@@ -1,10 +1,27 @@
-import React, { Suspense, useState } from 'react'
+import React, { Suspense, useRef, useState } from 'react'
 import ProductLayout from '../../layouts/product-screen-layout'
 import { Canvas } from '@react-three/fiber'
 import NikeShoeWalk from '../../models/shoe2'
+import { PanResponder, View } from 'react-native'
 
 const Product2Screen = ({navigation}) => {
+  const [isTouch, setIsTouch] = useState(false)
+  const viewRef = useRef(null);
   const [count, setCount] = useState<number>(1)
+  const [rotation, setRotation] = useState([0, 0, 0])
+  const panResponder = PanResponder.create({
+    onMoveShouldSetPanResponder: () => true,
+    onPanResponderMove: (_, gestureState) => {
+      const { dx, dy } = gestureState;
+      const newRotation = [
+        dy * Math.PI / 100,
+        dx * Math.PI / 100,
+        0,
+      ];
+      setRotation(newRotation);
+    },
+  });
+
   return (
     <ProductLayout
       title='Walking Shoe'
@@ -14,12 +31,16 @@ const Product2Screen = ({navigation}) => {
       onBackPress={()=>navigation.navigate('Home')}
       setCount={setCount}
     >
-      <Canvas>
+      <View style={{flex: 1}} ref={viewRef} onTouchStart={() => setIsTouch(true)}
+      onTouchEnd={() => setIsTouch(false)}
+      {...panResponder.panHandlers}>
         <Suspense fallback={null}>
+      <Canvas>
         <ambientLight/>
-          <NikeShoeWalk/>
-        </Suspense>
+          <NikeShoeWalk rotation={rotation} isTouch={isTouch}/>
       </Canvas>
+        </Suspense>
+      </View>
     </ProductLayout>
   )
 }
