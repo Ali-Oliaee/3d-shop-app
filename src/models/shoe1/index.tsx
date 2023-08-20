@@ -1,6 +1,6 @@
 import { Mesh } from 'three';
 import { TextureLoader } from 'expo-three';
-import { useLayoutEffect } from 'react';
+import { Suspense, useLayoutEffect } from 'react';
 import { useLoader } from '@react-three/fiber'
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader'
@@ -27,8 +27,8 @@ const NikeShoeSport = () => {
     },[obj])
   
     return (
-      <mesh rotation={[1.5, 1.5, 5]}>
-        <primitive object={obj} scale={5} />
+      <mesh rotation={[2, 1, 5]}>
+        <primitive object={obj} scale={8} />
       </mesh>
     )
   }

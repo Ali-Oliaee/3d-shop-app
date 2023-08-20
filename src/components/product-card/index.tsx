@@ -3,7 +3,7 @@ import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native'
 import styles from './styles'
 import RightArrowIcon from '../../assets/rightArrow'
 
-const ProductCard = ({title, price, image, hasShadow=true}) => {
+const ProductCard = ({title, price, image, hasShadow=true,onDetails}) => {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
@@ -14,7 +14,7 @@ const ProductCard = ({title, price, image, hasShadow=true}) => {
         <Text style={styles.title}>{title}</Text>
         <View style={styles.footer}>
           <Text style={styles.price}>{price}</Text>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button} onPress={onDetails}>
             <RightArrowIcon/>
           </TouchableOpacity>
         </View>
