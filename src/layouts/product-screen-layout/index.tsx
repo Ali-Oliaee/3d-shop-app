@@ -22,7 +22,7 @@ const ProductLayout = ({title,setCount, count,price,description,onBackPress, chi
                     <TouchableOpacity style={styles.counterButton} onPress={() => setCount(count + 1)}>
                         <Text style={styles.counterButtonText}>+</Text>
                     </TouchableOpacity>
-                    <Text style={styles.count}>0{count || 0}</Text>
+                    <Text style={styles.count}>{count < 10 && '0'}{count || 0}</Text>
                     <TouchableOpacity style={styles.counterButton} onPress={() => setCount(count >= 1 && count - 1)}>
                         <Text style={styles.counterButtonText}>-</Text>
                     </TouchableOpacity>
