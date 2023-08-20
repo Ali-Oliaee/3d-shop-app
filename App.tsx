@@ -3,6 +3,7 @@ import Product1Screen from './src/screens/product1';
 import Product2Screen from './src/screens/product2';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import ProfileScreen from './src/screens/profile';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,6 +14,7 @@ export default function App() {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Product1" component={Product1Screen} />
         <Stack.Screen name="Product2" component={Product2Screen} />
+        <Stack.Screen name='Profile' component={ProfileScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -6,10 +6,10 @@ import HomeIcon from '../../assets/homeIcon'
 import BellIcon from '../../assets/belIIcon'
 import UserIcon from '../../assets/userIcon'
 
-const BottomTab = () => {
+const BottomTab = ({navigation}) => {
   return (
     <View style={styles.container}>
-        <TouchableWithoutFeedback>
+        <TouchableWithoutFeedback onPress={() => navigation.navigate('Home')}>
             <HomeIcon/>
         </TouchableWithoutFeedback>
         <TouchableWithoutFeedback>
@@ -18,7 +18,7 @@ const BottomTab = () => {
         <TouchableWithoutFeedback>
             <BellIcon/>
         </TouchableWithoutFeedback>
-        <TouchableWithoutFeedback>
+        <TouchableWithoutFeedback onPress={() => navigation.navigate('Profile')}>
             <UserIcon />
         </TouchableWithoutFeedback>
     </View>
