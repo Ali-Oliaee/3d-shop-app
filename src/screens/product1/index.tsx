@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
+import React, { Suspense, useState } from 'react'
 import ProductLayout from '../../layouts/product-screen-layout'
+import NikeShoeSport from '../../models/shoe1'
+import { Canvas } from '@react-three/fiber'
 
 const Product1Screen = ({navigation}) => {
   const [count, setCount] = useState<number>(1)
@@ -11,7 +13,14 @@ const Product1Screen = ({navigation}) => {
       count={count}
       onBackPress={()=>navigation.navigate('Home')}
       setCount={setCount}
-    />
+    >
+      <Canvas>
+        <Suspense fallback={null}>
+        <ambientLight/>
+          {/* <NikeShoeSport/> */}
+        </Suspense>
+      </Canvas>
+    </ProductLayout>
   )
 }
 
