@@ -2,7 +2,7 @@ import React, { Suspense, useRef, useState } from 'react'
 import ProductLayout from '../../layouts/product-screen-layout'
 import { Canvas } from '@react-three/fiber'
 import NikeShoeWalk from '../../models/shoe2'
-import { PanResponder, View } from 'react-native'
+import { ActivityIndicator, PanResponder, Text, View } from 'react-native'
 
 const Product2Screen = ({navigation}) => {
   const [isTouch, setIsTouch] = useState(false)
@@ -32,9 +32,18 @@ const Product2Screen = ({navigation}) => {
       setCount={setCount}
     >
       <View style={{flex: 1}} ref={viewRef} onTouchStart={() => setIsTouch(true)}
-      onTouchEnd={() => setIsTouch(false)}
+      onTouchEnd={() => setIsTouch(false)} 
       {...panResponder.panHandlers}>
-        <Suspense fallback={null}>
+        <Suspense fallback={<View style={{
+          flex: 1,
+          alignItems: 'center',
+          justifyContent: 'center'
+          }}>
+          <ActivityIndicator
+          size='large'
+          color='#000'
+          />
+        </View>}>
       <Canvas>
         <ambientLight/>
           <NikeShoeWalk rotation={rotation} isTouch={isTouch}/>
