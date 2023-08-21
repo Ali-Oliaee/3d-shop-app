@@ -6,7 +6,7 @@ import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader'
 
 
-const NikeShoeWalk = ({rotation, isTouch}) => {
+const NikeShoeWalk = ({rotation=[0,0,0], isTouch=false}) => {
     const mesh = useRef();
     const [normal, base] = useLoader(TextureLoader, [
       require('./textures/bottom.png'),
@@ -29,15 +29,14 @@ const NikeShoeWalk = ({rotation, isTouch}) => {
 
     useFrame(() => {
       if(isTouch){
-        mesh.current.rotation.y += rotation[1]
-        mesh.current.rotation.x += (rotation[0] * -1);
-        mesh.current.rotation.z += (rotation[2] * -1);
+        mesh.current.rotation.y = rotation[0]
+        mesh.current.rotation.x = (rotation[1] * -1);
       }
     })
 
     return (
       <mesh ref={mesh} rotation={[0,0,0]}>
-        <primitive object={obj} scale={0.018} />
+        <primitive object={obj} scale={0.017} />
       </mesh>
     )
   }

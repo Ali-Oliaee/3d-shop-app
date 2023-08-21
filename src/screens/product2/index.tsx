@@ -1,26 +1,21 @@
-import React, { Suspense, useRef, useState } from 'react'
+import React, { Suspense, useEffect, useRef, useState } from 'react'
 import ProductLayout from '../../layouts/product-screen-layout'
 import { Canvas } from '@react-three/fiber'
 import NikeShoeWalk from '../../models/shoe2'
-import { ActivityIndicator, PanResponder, Text, View } from 'react-native'
+import Slider from '@react-native-community/slider';
+import { ActivityIndicator, View } from 'react-native'
 
 const Product2Screen = ({navigation}) => {
   const [isTouch, setIsTouch] = useState(false)
-  const viewRef = useRef(null);
   const [count, setCount] = useState<number>(1)
-  const [rotation, setRotation] = useState([0, 0, 0])
-  const panResponder = PanResponder.create({
-    onMoveShouldSetPanResponder: () => true,
-    onPanResponderMove: (_, gestureState) => {
-      const { dx, dy } = gestureState;
-      const newRotation = [
-        dy * Math.PI / 100,
-        dx * Math.PI / 100,
-        0,
-      ];
-      setRotation(newRotation);
-    },
-  });
+  const [rotation, setRotation] = useState<number[]>([0, 0, 0])
+  const [horizontalRotate, setHorizontalRotate] = useState<number>(0)
+  const [verticalRotate, setVerticalRotate] = useState<number>(0)
+
+  useEffect(() => {
+    setRotation([horizontalRotate,verticalRotate,0])
+  }, [horizontalRotate, verticalRotate])
+  
 
   return (
     <ProductLayout
@@ -31,9 +26,6 @@ const Product2Screen = ({navigation}) => {
       onBackPress={()=>navigation.navigate('Home')}
       setCount={setCount}
     >
-      <View style={{flex: 1}} ref={viewRef} onTouchStart={() => setIsTouch(true)}
-      onTouchEnd={() => setIsTouch(false)} 
-      {...panResponder.panHandlers}>
         <Suspense fallback={<View style={{
           flex: 1,
           alignItems: 'center',
@@ -49,7 +41,28 @@ const Product2Screen = ({navigation}) => {
           <NikeShoeWalk rotation={rotation} isTouch={isTouch}/>
       </Canvas>
         </Suspense>
-      </View>
+      <Slider
+        style={{width: '100%', height: 40}}
+        minimumValue={0}
+        maximumValue={6}
+        minimumTrackTintColor="#000000"
+        maximumTrackTintColor="#000000"
+        onValueChange={setHorizontalRotate}
+        value={horizontalRotate}
+        onTouchEnd={() => setIsTouch(false)}
+        onTouchStart={() => setIsTouch(true)}
+      />
+      <Slider
+        style={{width: '100%', height: 40,right: -160, top: 250, position:'absolute', transform:[{rotate: '90deg'}]}}
+        minimumValue={0}
+        maximumValue={6}
+        minimumTrackTintColor="#000000"
+        maximumTrackTintColor="#000000"
+        onValueChange={setVerticalRotate}
+        value={verticalRotate}
+        onTouchEnd={() => setIsTouch(false)}
+        onTouchStart={() => setIsTouch(true)}
+        />
     </ProductLayout>
   )
 }
