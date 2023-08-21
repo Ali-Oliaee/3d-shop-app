@@ -1,12 +1,13 @@
 import { Mesh } from 'three';
 import { TextureLoader } from 'expo-three';
-import { useLayoutEffect } from 'react';
-import { useLoader } from '@react-three/fiber'
+import {  useLayoutEffect, useRef} from 'react';
+import { useFrame, useLoader } from '@react-three/fiber'
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader'
 
 
-const NikeShoeWalk = () => {
+const NikeShoeWalk = ({rotation=[0,0,0], isTouch=false}) => {
+    const mesh = useRef();
     const [normal, base] = useLoader(TextureLoader, [
       require('./textures/bottom.png'),
       require('./textures/logo.png'),
@@ -25,10 +26,17 @@ const NikeShoeWalk = () => {
         }
       })
     },[obj])
-  
+
+    useFrame(() => {
+      if(isTouch){
+        mesh.current.rotation.y = rotation[0]
+        mesh.current.rotation.x = (rotation[1] * -1);
+      }
+    })
+
     return (
-      <mesh rotation={[1, 5.2, 0.4]}>
-        <primitive object={obj} scale={0.015} />
+      <mesh ref={mesh} rotation={[0,0,0]}>
+        <primitive object={obj} scale={0.017} />
       </mesh>
     )
   }

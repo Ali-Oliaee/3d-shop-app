@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         zIndex: 99
     },
     title:{
-        fontSize: 14,
+        fontSize: 18,
         marginBottom: 6
     },
     row:{
@@ -51,18 +51,18 @@ const styles = StyleSheet.create({
     },
     counterButton:{
         backgroundColor: '#E0E0E0',
-        width: 26,
-        height: 26,
+        width: 30,
+        height: 30,
         borderRadius:4,
         justifyContent: 'center',
         alignItems: 'center'
     },
     counterButtonText:{
-        fontSize: 18
+        fontSize: 20
     },
     count:{
         marginHorizontal: 16,
-        fontSize: 16,
+        fontSize: 20,
         color: '#242424'
     },
     rateContainer: {

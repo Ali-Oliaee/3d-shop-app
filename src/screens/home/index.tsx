@@ -65,7 +65,7 @@ const HomeScreen = ({navigation}) => {
         hasShadow={false}
       />
       </ScrollView>
-      <BottomTab/>
+      <BottomTab navigation={navigation}/>
     </View>
   )
 }
