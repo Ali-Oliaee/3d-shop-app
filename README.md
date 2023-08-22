@@ -16,8 +16,8 @@ This project is a shoe shop built with expo, threejs(3D modeling) and available 
 <h2 align="center">
 Screenshots
 </h2>
-<p>
-<img src="/screenshots/sc1.png" width="30%" display="inline" align="center"/>
+<p align="center">
+<img src="/screenshots/sc1.png" width="30%" display="inline"/>
 </p>
 
 ## :rocket: setup and run
